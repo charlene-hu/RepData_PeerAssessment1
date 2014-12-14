@@ -1,4 +1,4 @@
-# Reproducible Research: Peer Assessment 1
+#Reproducible Research: Peer Assessment 1
 
 
 ##Loading and preprocessing the data
@@ -22,7 +22,7 @@ df_aggr1 <- ddply(df, .(date), colwise(sum, .(steps)))
 hist(df_aggr1$steps, xlab='steps', ylab='frequency', main='total number of steps taken each day')
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 calculate the mean and median 
 
@@ -42,7 +42,7 @@ df_aggr2 <- ddply(df, .(interval), colwise(mean, .(steps)))
 plot(df_aggr2$interval, df_aggr2$steps, type="l", xlab= "interval", ylab= "steps")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 calculate the max mean steps and find the interval with the max mean steps
 
@@ -75,7 +75,7 @@ df_new_aggr1 <- ddply(df_new, .(date), colwise(sum, .(steps)))
 hist(df_new_aggr1$steps, xlab='steps', ylab='frequency', main='total number of steps taken each day')
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 ```r
 ##calculate mean and median 
@@ -105,6 +105,6 @@ library(lattice)
 xyplot(steps ~ interval | weekday, df_new_aggr, type='l', layout = c(1,2), ylab='Number of steps')
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 **The activity patterns between weekdays and weekends appear to be different. There are more activities throughout the day during weekeneds, while on weekdays, there are more activities during early morning hours, then again during later afternoon hours.**
